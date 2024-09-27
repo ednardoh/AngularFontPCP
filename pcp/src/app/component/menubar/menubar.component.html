@@ -1,0 +1,40 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <button (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Módulo de PCP - eFactory Versão: 1.0.0.1 </span>
+    <span class="example-spacer"></span>
+    
+</mat-toolbar>
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-nav-list>
+        <mat-list-item>
+            <button routerLink="card" mat-button><mat-icon>storage</mat-icon> Cadastros</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="pcp" mat-button><mat-icon>brightness_low</mat-icon> PCP</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="tabuser" mat-button><mat-icon>contacts</mat-icon> Usuários</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="config" mat-button><mat-icon>brightness_high</mat-icon> Configurações</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="/" mat-button><mat-icon>home</mat-icon> Home</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button mat-button><mat-icon>help</mat-icon> Help</button>
+        </mat-list-item>   
+        <mat-list-item>
+            <button mat-button><mat-icon>hot_tub</mat-icon> Logout</button>
+        </mat-list-item>              
+    </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center;min-height: 600px;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,19 @@
+<div mat-dialog-title>
+    <h1>Cadastro de SubGrupos</h1>
+</div>
+<form [formGroup]="subgrupoForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Descrição do SubGrupo</mat-label>
+                <input matInput type="text" id="descricao" formControlName="descricao">                
+            </mat-form-field>
+        </div>                 
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Atualizar': 'Salvar'}}</button>
+    </div>
+</form>
+
+

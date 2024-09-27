@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-header>
+      <mat-form-field>
+        <input matInput (keyup)="Filterchange($event)" placeholder="digite algum texto" />
+      </mat-form-field>
+      <button style="margin-left: 50%;" mat-raised-button color="primary" (click)="openAddEditSubGrupoForm()">Add SubGrupos (+)</button>
+    </mat-card-header>
+    <mat-card-content>
+  
+  
+  <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      <ng-container matColumnDef="Codigo">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef> Codigo</th>
+        <td mat-cell *matCellDef="let element">{{element.codigo}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Descricao">
+          <th mat-sort-header mat-header-cell *matHeaderCellDef> Descrição</th>
+          <td mat-cell *matCellDef="let element">{{element.descricao}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="Ação">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ação </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary" (click)="atualizarSubgrupo(element.codigo)">  
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteSubgrupo(element.codigo)"> 
+              <mat-icon>delete</mat-icon>
+            </button>          
+          </td>
+        </ng-container>
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+  
+  </table>
+  
+  </mat-card-content>
+  <br>
+  <mat-card-footer>
+  
+      <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+  
+  </mat-card-footer>
+  </mat-card>
+

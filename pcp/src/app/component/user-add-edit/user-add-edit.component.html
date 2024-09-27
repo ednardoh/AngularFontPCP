@@ -1,0 +1,88 @@
+<div mat-dialog-title>
+    <h1>Cadastro de Usuários</h1>
+</div>
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+                 
+        <mat-form-field class="formulario-full-width">
+        <mat-label>Selecione o Departamento</mat-label>
+        <mat-select [(value)]="departamentos" (open)="FindAllDepartamento()"> 
+            <mat-option></mat-option>
+            <mat-option *ngFor="let departamentos of departamento"  value="departamentos.id">{{departamentos.descricao}}</mat-option> 
+        </mat-select>
+        </mat-form-field>          
+
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" id="email" formControlName="email">                
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input matInput type="text" id="senha" formControlName="senha">                
+            </mat-form-field>
+        </div>                
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome de Login</mat-label>
+                <input matInput type="text" id="userName" formControlName="userName">                
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <section class="ckbuser-section">
+                <mat-checkbox class="ckbuser-margin" id="bloquear"
+                    formControlName="bloquear" >Bloquear Usuário
+                </mat-checkbox>                                                
+            </section>            
+        </div>            
+               
+        <div class="row">
+            <section class="ckbuser-section">
+                <mat-checkbox class="ckbuser-margin" id="permissaocadclientes"
+                    formControlName="permissaocadclientes">Permitir Cadastro de Clientes
+                </mat-checkbox>                
+            </section> 
+        </div>   
+
+        <div class="row">
+            <section class="ckbuser-section">                
+                <mat-checkbox class="ckbuser-margin" id="permissaocadendereco"
+                    formControlName="permissaocadendereco">Permitir Cadastro de Endereço                    
+                </mat-checkbox>
+            </section> 
+        </div>    
+        
+        <div class="row">
+            <section class="ckbuser-section">                
+                <mat-checkbox class="ckbuser-margin" id="permissaocadproduto"
+                    formControlName="permissaocadproduto">Permitir Cadastro de Endereço                    
+                </mat-checkbox>
+            </section> 
+        </div>   
+        
+        <div class="row">
+            <section class="ckbuser-section">                
+                <mat-checkbox class="ckbuser-margin" id="permissaopedidocompra"
+                    formControlName="permissaopedidocompra">Permitir Pedido de Compra                    
+                </mat-checkbox>
+            </section> 
+        </div> 
+        
+        <div class="row">
+            <section class="ckbuser-section">                
+                <mat-checkbox class="ckbuser-margin" id="permissaopedidovenda"
+                    formControlName="permissaopedidovenda">Permitir Pedido de Venda                    
+                </mat-checkbox>
+            </section> 
+        </div> 
+                                
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Atualizar': 'Salvar'}}</button>
+    </div>
+</form>

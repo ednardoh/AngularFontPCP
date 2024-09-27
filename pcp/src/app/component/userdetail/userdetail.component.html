@@ -1,0 +1,18 @@
+
+<h1 mat-dialog-title>{{inputdata.title}}</h1>
+<div mat-dialog-content>                                      
+  <h2>Permitir Aprovar/Desaprovar P.D.V.      : <b>{{userdata.permissao_pedidovendaaprovar}}</b></h2> 
+  <h2>Permitir Aprovar/Desaprovar O.P.        : <b>{{userdata.permissao_producaoaprovar}}</b></h2>
+  <h2>Permitir movimentar Fas. na prod.       : <b>{{userdata.permissao_producaofasemovimentar}}</b></h2>
+  <h2>Permitir atualizar est. via Prod.       : <b>{{userdata.permissao_producaoatualizarestoque}}</b></h2>
+  <h2>Permitir atualizar est. via Inven.      : <b>{{userdata.permissao_estoqueinventario}}</b></h2>
+  <h2>Permitir cancelar Nota Fiscal           : <b>{{userdata.permissao_notafiscalcancelar}}</b></h2>
+  <h2>Permitir visualizar prc. nos P.D.V.     : <b>{{userdata.permissao_pedidovendaverprecos}}</b></h2>
+  <h2>Alterar Forma de Pagamento nos P.D.V.   : <b>{{userdata.permissao_pedidovendaalterarpagamento}}</b></h2>
+  <h2>Alterar/Visualizar prc. no cad. Prod.   : <b>{{userdata.permissao_produtoverprecos}}</b></h2>
+  <h2>Permitir visualizar desconto nos P.D.V. : <b>{{userdata.permissao_pedidovendadesconto}}</b></h2>
+</div>
+<div mat-dialog-actions>
+  <button (click)="closepopup()" mat-raised-button color="warn">Close</button>
+  <!-- <button mat-raised-button [mat-dialog-close]="closemessage" color="accent">Cancel</button> -->
+</div>
